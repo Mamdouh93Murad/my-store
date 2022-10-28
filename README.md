@@ -1,27 +1,70 @@
-# MyStore
+# Angular Store Web-App
+<h2 align="center">MyReads Project - React App</h2>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+<p align="center">
+<a href="https://www.linkedin.com/in/mamdouh-morad/">
+    <img alt="Follow Me on LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+</a>
 
-## Development server
+A Web Application for an online Store to sell products using 
+The Application has been built using **Angular** and **Angular-Material** to give dynamic and responsive experience.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Basic Info
+* use ``npm install`` in root folder to install the project dependencies and modules
+* use ``ng serve`` to get the project working and starting on ``localhost:4200``
+``ng serve --port xxxx`` can be used to specify port number
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Application Data
 
-## Build
+The Data are being stored and read from json files in the ``src/app/assets`` Folder.
+* **Product Info** are stored in the ``data.json`` file.
+* **User Info** are stored in the ``user.json`` file.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The Data Interfaces and Objects Structures are located in the ``src/app`` Folder.
+* The **Product** Data interface is located in the ``product.ts``file.
+* The **User** Interface is located in the ``login.ts`` file.
+* The **Form** Interface is located in the ``form.ts`` file.
 
-## Running unit tests
+## Project Structure
+The Application is built using set of **components** and **services** which handle the flow of data and UI-design. 
+The **Components** are set into 3 different modules. 
+* **Main** Module which handles the Login, Signup and Header Components.
+* **Product** Module which handles and contains the Product List, Product Info and Product Details.
+* **Shopping** Module which handles the Cart, Form and Confirmation Processes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The **Services** are made up of two. 
+* **HTTP** Service which retrieves Data from The JSON Files.
+* **Store** Service which handles the application functions such as Login, Signup and Data Details.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Interface Properities and Functions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A table containing the properities and functions of each application data-object and Interface used in the website.
+
+|                |Products                                      | Users                      |
+|----------------|----------------------------------------------|----------------------------|
+|Elements        |`'ID, Name, URL, Description, Price, Amount`  |`Usernmae, Password`        |
+|Functions       |`"Retrieve, Update, Add2Cart, RemoveFromCart` |`"Login, Sign up`           |
+
+
+
+
+## UML diagram
+The Flow of User Experience and Interaction in the website. 
+
+```mermaid
+graph LR
+A[Login] --> B((sign up))
+B --> C((Login))
+A -->C
+C --> D{HomePage}
+D --> F(ProductList)
+F --> J(Product Details)
+J --> E
+F --> E
+D ---> E(CartList)
+E --Buyer Info Form-->G(Checkout)
+G --> H(Confirmation)
+H -->D

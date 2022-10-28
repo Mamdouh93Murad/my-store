@@ -1,0 +1,17 @@
+  <div>
+  <div *ngIf="this.cart.length === 0">
+    <h1 style="text-align: center;"> Cart is Empty</h1>
+  </div>
+  <div >
+<mat-grid-list cols="3" rowHeight="3:2"  style="top: 1%; ">
+  <div *ngFor="let product of cart">
+    <mat-grid-tile id="details-product{{product.id}}">
+      <app-product [product]="product" (changed)="updateCart($event)" style="max-width : 50%"></app-product>
+    </mat-grid-tile>
+  </div>
+</mat-grid-list>
+  <h1 style="text-align: center;" id="details-total-price">Total Price : {{totalPrice.toFixed(2)}}</h1>
+  <app-form  [cart]="this.cart"></app-form>
+</div>
+
+

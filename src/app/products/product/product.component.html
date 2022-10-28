@@ -1,0 +1,50 @@
+
+<mat-card>
+  <mat-card-title style="text-align: center;" id="list-{{product.name}}">{{product.name}}</mat-card-title>
+  <mat-card-subtitle style="text-align: center;" id="list-subtitles-{{product.id}}">{{product.description}}</mat-card-subtitle>
+  <img mat-card-lg-image src={{product.url}} style="margin:auto"  id="list-image-{{product.name}}" (click)="navigate(product.id)">
+  <mat-card-actions style="margin-left: 15%; ">
+    <div *ngIf="!this.isCart">
+      <button mat-flat-button color="primary"    id="list-button-{{product.id}}" (click)="addCart(product)">Add to Cart</button>
+    </div>
+    <br>
+    <div *ngIf="this.isCart">
+      <button mat-flat-button color="primary"   id="list-button-{{product.id}}" (click)="remove()">Remove From Cart</button>
+    </div>
+      <mat-label style="margin-left: 15%;">Amount</mat-label>
+
+        <mat-select [(ngModel)]="product.amount" name="amount"  id="list-amount-{{product.id}}" (ngModelChange)="update()">
+        <mat-option [value]='1'  id="list-value-{{product.id}}-1">
+          1
+        </mat-option>
+        <mat-option [value]='2' id="list-value-{{product.id}}-2">
+          2
+        </mat-option>
+        <mat-option [value]='3' id="list-value-{{product.id}}-3">
+          3
+        </mat-option>
+        <mat-option [value]='4' id="list-value-{{product.id}}-4">
+          4
+        </mat-option>
+        <mat-option [value]='5' id="details-value-{{product.id}}-5">
+          5
+        </mat-option>
+        <mat-option [value]='6' id="list-value-{{product.id}}-6">
+          6
+        </mat-option>
+        <mat-option [value]='7' id="list-value-{{product.id}}-7">
+          7
+        </mat-option>
+        <mat-option [value]='8' id="list-value-{{product.id}}-8">
+          8
+        </mat-option>
+        <mat-option [value]='9' id="list-value-{{product.id}}-9">
+          9
+        </mat-option>
+        <mat-option [value]='10' id="list-value-{{product.id}}-10">
+          10
+        </mat-option>
+      </mat-select>
+  </mat-card-actions>
+  <mat-card-footer style="text-align: center;" id="list-price-{{product.id}}"> {{  (product.price * product.amount)  || 0}}</mat-card-footer>
+</mat-card>

@@ -1,0 +1,6 @@
+<mat-nav-list style="display : flex; justify-content: space-around;" >
+  <a mat-list-item routerLink="/home" ><mat-icon style="margin-right:2%">home</mat-icon> Home </a>
+  <a mat-list-item routerLink="/cart" > <mat-icon  matBadge='{{total}}' style="margin-right:2%">add_shopping_cart</mat-icon>Cart </a>
+  <button mat-flat-button color="primary" (click)="this.storeService.logout()" style="margin-right:1%">Logout</button>
+</mat-nav-list>
+

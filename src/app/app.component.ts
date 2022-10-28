@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Product } from './product';
+import { StoreService } from './services/store.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-store';
+
+  constructor(private storeService : StoreService) { }
+  ngOnInit(): void {
+
+  }
 }

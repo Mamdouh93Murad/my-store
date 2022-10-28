@@ -1,0 +1,35 @@
+<div>
+  <h2 style="text-align : center">Please Fill Out the Following Form</h2>
+  <form #Form="ngForm" (ngSubmit)="updateForm()" style="display : flex; flex-direction: column">
+    <input type="text" name="name" #Name="ngModel" required  appForbiddenName="username" placeholder="Full name" [(ngModel)]="form.name" style="max-width:25%; margin-left : 37%; margin-top:1%">
+      <div *ngIf="Name.invalid && Name.dirty" style="max-width:25%; margin-left : 37%; margin-top:1%">
+        <div *ngIf="Name.errors?.['required']">
+          Please provide your Full Name
+        </div>
+      </div>
+
+    <input type="text" name="Address" required minlength="10" #Address="ngModel" [(ngModel)]="form.address" placeholder="Address" style="max-width:25%; margin-left : 37%; margin-top:1%">
+      <div *ngIf="Address.invalid && Address.dirty" style="max-width:25%; margin-left : 37%; margin-top:1%">
+        <div *ngIf="Address.errors?.['required']">
+          Please provide your Address
+        </div>
+        <div *ngIf="Address.errors?.['minlength']">
+          The Address must be at least 10 characters.
+        </div>
+      </div>
+
+    <input type="number" name="card" required minlength="16"  #Card="ngModel" [(ngModel)]="form.card" placeholder="Credit Card 16 Digits number" style="max-width:25%; margin-left : 37%; margin-top:1%">
+      <div *ngIf="Card.invalid && Card.dirty" style="max-width:25%; margin-left : 37%; margin-top:1%">
+        <div *ngIf="Card.errors?.['required']">
+          Please provide your Credit Card Number.
+        </div>
+        <div *ngIf="Card.errors?.['minlength']">
+          The Credit Card must be at least 16 Characters/Digits.
+        </div>
+      </div>
+
+
+    <button type="submit"  mat-flat-button color="primary" [disabled]="Form.invalid || this.cart.length < 1" style="margin-top:1%">Check Out</button>
+  </form>
+</div>
+

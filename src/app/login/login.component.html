@@ -1,0 +1,15 @@
+<div style="display: flex; flex-direction: column; width:30%; margin : auto; position: fixed; left: 35%; top: 30%;">
+  <mat-form-field >
+    <mat-label >Name</mat-label>
+    <input matInput placeholder="name" id="name" [(ngModel)]="user.username" >
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="password" id="password" [(ngModel)]="user.password" >
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" (click)="login()" style="margin-top: 5px">Login</button>
+  <button mat-flat-button color="primary" (click)="signup()" style="margin-top: 5px" >signup</button>
+  </div>

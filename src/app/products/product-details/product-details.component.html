@@ -1,0 +1,49 @@
+  <div style="display : flex;justify-content:center;align-items:center;">
+    <mat-card>
+          <mat-card-title style="text-align: center;">{{product.name}}</mat-card-title>
+          <mat-card-subtitle style="text-align: center;">{{product.description}}</mat-card-subtitle>
+          <img mat-card-lg-image src={{product.url}} >
+
+          <mat-card-actions >
+            <!-- <button mat-flat-button color="primary"  style="margin-left: 33%" (click)="addCart(product)">Add to Cart</button> -->
+            <button mat-flat-button color="primary"  (click)="addCart(product)" style="margin-left:20%">Add to Cart</button>
+            <br>
+              <mat-label style="margin-left:35%">Amount</mat-label>
+              <!-- <mat-select [(ngModel)]="product.amount" name="amount" (ngModelChange)="update(product.id, product.amount)"  style="max-width:60%; margin-left:20%"> -->
+              <mat-select [(ngModel)]="product.amount" name="amount">
+                <mat-option [value]='1'>
+                  1
+                </mat-option>
+                <mat-option [value]='2'>
+                  2
+                </mat-option>
+                <mat-option [value]='3'>
+                  3
+                </mat-option>
+                <mat-option [value]='4'>
+                  4
+                </mat-option>
+                <mat-option [value]='5'>
+                  5
+                </mat-option>
+                <mat-option [value]='6'>
+                  6
+                </mat-option>
+                <mat-option [value]='7'>
+                  7
+                </mat-option>
+                <mat-option [value]='8'>
+                  8
+                </mat-option>
+                <mat-option [value]='9'>
+                  9
+                </mat-option>
+                <mat-option [value]='10'>
+                  10
+                </mat-option>
+              </mat-select>
+          </mat-card-actions>
+          <mat-card-footer style="text-align: center;">{{product.price * product.amount || 0}}</mat-card-footer>
+    </mat-card>
+
+  </div>

@@ -1,0 +1,13 @@
+<!-- <div *ngIf="this.logged === true">
+  <app-product-items *ngFor="let product of productsList" [product]="product"></app-product-items>
+</div> -->
+
+<mat-grid-list cols="3" rowHeight="3:2" *ngIf="this.logged === true" style="top: 1%; ">
+  <mat-grid-tile id="list-{{product}}" *ngFor="let product of productsList">
+      <app-product [product]="product" (changed)="update($event)"></app-product>
+  </mat-grid-tile>
+</mat-grid-list>
+  <h1 style="text-align: center;">Total Price : {{totalPrice.toFixed(2)}}</h1>
+  <button mat-flat-button color="primary" style="width: 100%; bottom : -0.1%" routerLink="/cart">Go To Cart</button>
+
+
