@@ -1,5 +1,5 @@
 # Angular Store Web-App
-<h2 align="center">MyReads Project - React App</h2>
+<h2 align="center">MyStore Project - Angular App</h2>
 
 <p align="center">
 <a href="https://www.linkedin.com/in/mamdouh-morad/">
