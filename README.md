@@ -6,7 +6,7 @@
     <img alt="Follow Me on LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
 
-A Web Application for an online Store to sell products using 
+A Web Application for an online Store to sell products
 The Application has been built using **Angular** and **Angular-Material** to give dynamic and responsive experience.
 
 ## Basic Info
